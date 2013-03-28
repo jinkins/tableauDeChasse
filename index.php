@@ -30,6 +30,7 @@
                         ?>
                     </select>
                     <input type="password" name="mdp" id="mdp">
+                    <button type="button" id="connexion">Connexion</button>
                 </form>
                 <div data-role="footer"> 
                 <h2>Total du tableau de chasse : </h2> 
