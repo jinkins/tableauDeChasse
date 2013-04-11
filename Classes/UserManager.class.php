@@ -39,7 +39,7 @@ class UserManager
     
     public function select($id)
     {
-        $q = $this->db->prepare("SELECT users.* , COUNT(*) AS Present FROM users LEFT JOIN heures ON users.ID = heures.Qui WHERE Debut IS NOT NULL AND Fin IS NULL AND ID = :id");
+        $q = $this->db->prepare("SELECT * FROM users WHERE ID = :id");
         $q->bindValue(':id', $id);
 
         $q->execute();
