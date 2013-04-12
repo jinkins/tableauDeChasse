@@ -28,6 +28,6 @@ function connexion2(r)
 
     else
     {
-        window.location = "main.php";   
+        window.location = resultat;
     }
 }

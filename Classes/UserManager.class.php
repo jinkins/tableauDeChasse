@@ -12,13 +12,13 @@ class UserManager
 
     public function connexion($id, $mdp)
     {
-        $q = $this->db->prepare("SELECT COUNT(*) AS OK FROM users WHERE ID = :id AND MDP = :mdp");
+        $q = $this->db->prepare("SELECT COUNT(*) AS resultat FROM users WHERE ID = :id AND MDP = :mdp");
         $q->bindValue(":id" , $id);
         $q->bindValue(":mdp" , $mdp);
         $q->execute();
         
         $r = $q->fetch();
-        $ok = $r[0]["OK"];
+        $ok = $r["resultat"];
         
         if($ok == 0)
         {
@@ -46,7 +46,6 @@ class UserManager
         $resultat = $q->fetch();
         
         $user = new User($resultat);
-
         return $user;
     }
     

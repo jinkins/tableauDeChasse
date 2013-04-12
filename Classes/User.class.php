@@ -11,7 +11,6 @@ class User
     public function __construct(array $donnees)
     {
         $this->hydrate($donnees);
-        $this->manager = new UserManager();
     }
 
     public function hydrate(array $donnees)
@@ -27,10 +26,6 @@ class User
         }
     }
     
-    public function arrivee()
-    {
-        $this->manager->arrivee($this->id);
-    }
     
     
     // GET

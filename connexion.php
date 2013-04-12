@@ -6,7 +6,7 @@ $userManager = new UserManager();
 if($userManager->connexion($_POST["qui"], $_POST["mdp"]) == true)
 {
     $ok = "main.php";
-    //$_SESSION["user"] = $userManager->select($_POST["id"]);
+    $_SESSION["user"] = $userManager->select($_POST["qui"]);
 }
 else
 {
