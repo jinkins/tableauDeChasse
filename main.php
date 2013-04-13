@@ -1,5 +1,7 @@
 <?php
 require_once('Classes/appelClasse.php');
+$conqueteManager = new ConqueteManager();
+$conquetes       = $conqueteManager->selectFromConquerant(2);
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,16 +22,19 @@ require_once('Classes/appelClasse.php');
             <div data-role="content">
                 <div class="content-primary">	
                     <ul data-role="listview">
-                        <li><a href="mod.php?id=1">
-                                <img src="IMG/Laurent Kools.jpg" />
-                                <h3>Laurent Kools</h3>
-                                <p>La pute</p>
-                            </a></li>
-                        <li><a href="mod.php?id=2">
-                                <img src="IMG/Geoffrey Huet.jpg" />
-                                <h3>Geoffrey Huet</h3>
-                                <p>Le dieu</p>
-                            </a></li>
+                        <?php
+                        for ($i = 0; $i < sizeof($i); $i++)
+                        {
+                            ?>
+                            <li><a href = '<?php echo "mod.php?id=" . $conquetes[$i]->get("id") ?>'/>
+                                <img src = 'IMG/<?php echo $conquetes[$i]->get("id") ?>.jpg' />
+                                <h3><?php echo $conquetes[$i]->get("nom") . " " . $conquetes[$i]->get("prenom"); ?></h3>
+                                <p></p>
+                                </a></li>
+
+                            <?php
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>
