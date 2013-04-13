@@ -1,3 +1,8 @@
+<?php
+require_once('Classes/appelClasse.php');
+$conqueteManager = new ConqueteManager();
+$conquetes       = $conqueteManager->select($_REQUEST["id"]);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +11,8 @@
     </head>
     <body>
         <?php
-        // put your code here
+        
+        var_dump($conquetes);
         ?>
     </body>
 </html>
